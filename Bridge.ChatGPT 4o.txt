@@ -1,0 +1,17 @@
+1.	Context : 
+Bridge(playing cards game), Python script
+
+2.	Hypothesis: 
+Having the ordinary deck of 52 cards, 13 cards on each 4 colors: Spade(s), Hearts(h), Diamond(d) and Clubs(c), the points values of them are: the Ace(A) value 4 point , the King(K) = 3 points, the Queen(Q) = 2 point and the Jack(J) = 1 point, the rest from 10 to 2 => 0(zero) points.
+Having a constant SOUTH_HAND with these 13 cards: 
+Spades = A, K, Q, 10, 7, 5, 3
+Hearts = 9, 6, 4
+Diamond = 8
+Clubs = 7, 5
+3.	Demands:
+Make a function getHandPoints(handOf13Cards) returning the sum of the points (remember A=4, K=3, Q=2, J=1, the rest = 0)
+Check that getHandPoints(SOUTH_HAND) == 9
+Make a function dealTheRestOf3Hands that randomly distribute the remaining 39 cards (39 = 52 – 13 from  SOUTH_HAND) to the 3 others hands (northHand, eastHand and westHand) in such a way that getHandPoints(northHand) <=11 and getHandPoints(eastHand) <=11. Return the 3 hands.
+Call the function dealTheRestOf3Hands for 10000 times and count each time getHandPoints(eastHand) + getHandPoints(westHand) >=24 in a variable countOfPossibleOpponentsGame
+Print the percentage: countingPossibleOpponentsGame / 10000
+Call the function dealTheRestOf3Hands for 10000 times and plot the histogram of the sumOfEastWestAxis =  getHandPoints(eastHand) + getHandPoints(westHand)
