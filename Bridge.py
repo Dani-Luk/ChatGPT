@@ -1,6 +1,7 @@
 import random
-from collections import Counter
 import matplotlib.pyplot as plt
+import copy
+from collections import OrderedDict
 
 # Define the card points
 card_points = {'A': 4, 'K': 3, 'Q': 2, 'J': 1, '10': 0, '9': 0, '8': 0, '7': 0, '6': 0, '5': 0, '4': 0, '3': 0, '2': 0}
@@ -30,9 +31,6 @@ full_deck = {
     'Diamonds': ['A', 'K', 'Q', 'J', '10', '9', '8', '7', '6', '5', '4', '3', '2'],
     'Clubs': ['A', 'K', 'Q', 'J', '10', '9', '8', '7', '6', '5', '4', '3', '2']
 }
-
-import copy
-from collections import OrderedDict
 
 def remove_south_hand(full_deck, south_hand):
     # remaining_deck = full_deck.copy() # This is a shallow copy
