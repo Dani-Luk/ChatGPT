@@ -53,7 +53,6 @@ def dealTheRestOf3Hands(all_remaining_cards):
         northHand = {'Spades': [], 'Hearts': [], 'Diamonds': [], 'Clubs': []}
         eastHand = {'Spades': [], 'Hearts': [], 'Diamonds': [], 'Clubs': []}
         westHand = {'Spades': [], 'Hearts': [], 'Diamonds': [], 'Clubs': []}
-        
         for i, (suit, card) in enumerate(all_remaining_cards):
             if i % 3 == 0:
                 northHand[suit].append(card)
@@ -61,10 +60,8 @@ def dealTheRestOf3Hands(all_remaining_cards):
                 eastHand[suit].append(card)
             else:
                 westHand[suit].append(card)
-        
         if getHandPoints(northHand) <= 11 and getHandPoints(eastHand) <= 11:
             break
-    
     return northHand, eastHand, westHand
 
 # Use all_remaining_cards in the loop
