@@ -32,6 +32,7 @@ full_deck = {
 }
 
 import copy
+from collections import OrderedDict
 
 def remove_south_hand(full_deck, south_hand):
     # remaining_deck = full_deck.copy() # This is a shallow copy
@@ -71,10 +72,33 @@ def dealTheRestOf3Hands():
 countOfPossibleOpponentsGame = 0
 sumOfEastWestAxis = []
 
+# region GitHub Inline Ctrl+I
+# Don't keep every sum_points. Instead use an ordered dictionary for plotting the histogram
+# for _ in range(10000):
+#     _, eastHand, westHand = dealTheRestOf3Hands()
+#     sum_points = getHandPoints(eastHand) + getHandPoints(westHand)
+#     sumOfEastWestAxis.append(sum_points)
+#     if sum_points >= 24:
+#         countOfPossibleOpponentsGame += 1
+
+# # Calculate and print the percentage
+# percentage = (countOfPossibleOpponentsGame / 10000) * 100
+# print(f"Percentage of possible opponents game: {percentage}%")
+
+# # Plot the histogram
+# plt.hist(sumOfEastWestAxis, bins=range(0, 40), edgecolor='black')
+# plt.title('Histogram of the Sum of Points of East and West Hands')
+# plt.xlabel('Sum of Points')
+# plt.ylabel('Frequency')
+# plt.show()
+# endregion GitHub Inline Ctrl+I
+
+sumOfEastWestAxis = OrderedDict()
+
 for _ in range(10000):
     _, eastHand, westHand = dealTheRestOf3Hands()
     sum_points = getHandPoints(eastHand) + getHandPoints(westHand)
-    sumOfEastWestAxis.append(sum_points)
+    sumOfEastWestAxis[sum_points] = sumOfEastWestAxis.get(sum_points, 0) + 1
     if sum_points >= 24:
         countOfPossibleOpponentsGame += 1
 
@@ -83,7 +107,7 @@ percentage = (countOfPossibleOpponentsGame / 10000) * 100
 print(f"Percentage of possible opponents game: {percentage}%")
 
 # Plot the histogram
-plt.hist(sumOfEastWestAxis, bins=range(0, 40), edgecolor='black')
+plt.bar(sumOfEastWestAxis.keys(), sumOfEastWestAxis.values(), edgecolor='black')
 plt.title('Histogram of the Sum of Points of East and West Hands')
 plt.xlabel('Sum of Points')
 plt.ylabel('Frequency')
