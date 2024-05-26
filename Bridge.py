@@ -42,13 +42,14 @@ def remove_south_hand(full_deck, south_hand):
             remaining_deck[suit].remove(card)
     return remaining_deck
 
+# Calculate all_remaining_cards once
+remaining_deck = remove_south_hand(full_deck, SOUTH_HAND)
+all_remaining_cards = []
+for suit in remaining_deck:
+    all_remaining_cards.extend((suit, card) for card in remaining_deck[suit])
+
 # Function to deal the rest of the 3 hands
-def dealTheRestOf3Hands():
-    remaining_deck = remove_south_hand(full_deck, SOUTH_HAND)
-    all_remaining_cards = []
-    for suit in remaining_deck:
-        all_remaining_cards.extend((suit, card) for card in remaining_deck[suit])
-    
+def dealTheRestOf3Hands(all_remaining_cards):
     while True:
         random.shuffle(all_remaining_cards)
         northHand = {'Spades': [], 'Hearts': [], 'Diamonds': [], 'Clubs': []}
@@ -68,6 +69,7 @@ def dealTheRestOf3Hands():
     
     return northHand, eastHand, westHand
 
+# Use all_remaining_cards in the loop
 # Simulate the process 10,000 times and count the occurrences
 countOfPossibleOpponentsGame = 0
 sumOfEastWestAxis = []
@@ -94,14 +96,13 @@ sumOfEastWestAxis = []
 # endregion GitHub Inline Ctrl+I
 
 sumOfEastWestAxis = OrderedDict()
-
 for _ in range(10000):
-    _, eastHand, westHand = dealTheRestOf3Hands()
+    # region Inline Ctrl+I
+    _, eastHand, westHand = dealTheRestOf3Hands(all_remaining_cards.copy())
     sum_points = getHandPoints(eastHand) + getHandPoints(westHand)
     sumOfEastWestAxis[sum_points] = sumOfEastWestAxis.get(sum_points, 0) + 1
     if sum_points >= 24:
         countOfPossibleOpponentsGame += 1
-
 # Calculate and print the percentage
 percentage = (countOfPossibleOpponentsGame / 10000) * 100
 print(f"Percentage of possible opponents game: {percentage}%")
