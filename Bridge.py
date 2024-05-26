@@ -95,14 +95,17 @@ sumOfEastWestAxis = []
 # plt.show()
 # endregion GitHub Inline Ctrl+I
 
+# region Inline Ctrl+I
+# the dealTheRestOf3Hands() function will anyway shuffle the all_remaining_cards, so way make a copy in each loop ?
 sumOfEastWestAxis = OrderedDict()
 for _ in range(10000):
-    # region Inline Ctrl+I
-    _, eastHand, westHand = dealTheRestOf3Hands(all_remaining_cards.copy())
+    _, eastHand, westHand = dealTheRestOf3Hands(all_remaining_cards)
     sum_points = getHandPoints(eastHand) + getHandPoints(westHand)
     sumOfEastWestAxis[sum_points] = sumOfEastWestAxis.get(sum_points, 0) + 1
     if sum_points >= 24:
         countOfPossibleOpponentsGame += 1
+# region Inline Ctrl+I
+
 # Calculate and print the percentage
 percentage = (countOfPossibleOpponentsGame / 10000) * 100
 print(f"Percentage of possible opponents game: {percentage}%")
