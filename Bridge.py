@@ -106,9 +106,21 @@ for _ in range(10000):
 percentage = (countOfPossibleOpponentsGame / 10000) * 100
 print(f"Percentage of possible opponents game: {percentage}%")
 
+# region GitHub Inline Ctrl+I
+# show every xLabel on x axis, from min()-1 to max()+1
+# Plot the histogram
+# plt.bar(sumOfEastWestAxis.keys(), sumOfEastWestAxis.values(), edgecolor='black')
+# plt.title('Histogram of the Sum of Points of East and West Hands')
+# plt.xlabel('Sum of Points')
+# plt.ylabel('Frequency')
+# plt.show()
+# endregion GitHub Inline Ctrl+I
+
 # Plot the histogram
 plt.bar(sumOfEastWestAxis.keys(), sumOfEastWestAxis.values(), edgecolor='black')
 plt.title('Histogram of the Sum of Points of East and West Hands')
 plt.xlabel('Sum of Points')
 plt.ylabel('Frequency')
+plt.xticks(range(min(sumOfEastWestAxis.keys()) - 1, max(sumOfEastWestAxis.keys()) + 2))
 plt.show()
+
