@@ -1,8 +1,3 @@
-<div class="container">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Ace_of_spades2.svg" alt="Image 1" class="image1">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Queen_of_spades.svg"  alt="Image 2" class="image2">
-</div>
-
 <style>
 .container {
   position: relative;
@@ -28,3 +23,8 @@
   
 }
 </style>
+
+<div class="container">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Ace_of_spades2.svg" alt="Image 1" class="image1">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Queen_of_spades.svg"  alt="Image 2" class="image2">
+</div>
