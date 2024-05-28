@@ -56,8 +56,9 @@ Or maybe they don't have a game, and I can push myself up to 3 spades in the bid
 &emsp;They argued that after the two "Pass", the chance that the opponents have >=24 points is high, so it is not good to give them time to discover their suits; therefore, I should bid right away: 3 spades.<br>
 &emsp;But my gut didn't really tell me that they were more likely to have game points…😄
 
-&emsp;Where does this simulation come from 😉<br>
-&emsp;(honestly, it was also an excuse to see how I get along with the ChatGPT prompt and GitHub Copilot in VS) 
+&emsp;Where does this simulation come from.😉
 
-...and the results:<br>(via Pyodide terminal emulator / Python 3.11.3 (main, Mar 31 2024 11:27:51) on WebAssembly/Emscripten 👍)
+_**NOTE:** Actually, it was more of an excuse to see how I get along with the ChatGPT prompt and GitHub Copilot in VS. You can view the initial prompt [here](<Bridge/Bridge.ChatGPT 4o.txt>) and the subsequent ones in the commits history of bridge.py file._
+
+And the results:<br>(via Pyodide terminal emulator / Python 3.11.3 (main, Mar 31 2024 11:27:51) on WebAssembly/Emscripten 👍)
 ![Bridge simulation of 3 hands dealing ](Bridge/BridgeOnPyodide.png)
