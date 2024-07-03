@@ -94,7 +94,7 @@ The model is considered 'good' if the points on one side have the same color pat
 <!-- ![png snapshot](<NN-XOR cross 2 layers/NN-XOR cross 2 layers.png>) -->
 [![png snapshot][IMG_PNG]][IMG_PNG]
 
-#### An animated Gif:
+#### An animated Gif (thx [Ezgif](https://ezgif.com/)):
 [![Gif animated][ANIM_GIF]][ANIM_GIF]
 
 #### Youtube video:
