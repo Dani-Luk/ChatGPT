@@ -1,7 +1,7 @@
 # ChatGPT prompt samples (OpenAI + GitHub Copilot)
 
 ## 1. Bridge: Simulation of Dealing 3 Hands
-___
+
 &emsp;Another day I was arguing with my friends about how to bid for a given hand in bridge.<br>
 &emsp;I'm in 3rd position and the bidding was: _Pas, Pas_<br>
 &emsp;My hand:<br>
@@ -64,7 +64,7 @@ And the results:<br>(via Pyodide terminal emulator / Python 3.11.3 (main, Mar 31
 ![Bridge simulation of 3 hands dealing ](Bridge/BridgeOnPyodide.png)
 
 ## 2.1. NN-XOR Solved by 2 Crossing Layers (2 x 1 Perceptron) <br> &emsp; &nbsp; (1st Layer trained first)
-___
+
 &emsp;The same old story of the XOR problem😁, now solved by a 2-layer model with each layer having 1 perceptron.<br>
 &emsp;The first layer will learn the bitwise AND operation (or something else, at your discretion) and try to best separate its classes.<br>
 &emsp;The second layer, by incorporating the output of the first (frozen) layer as a third input dimension(z-elevation), will attempt to achieve the XOR results.
@@ -106,7 +106,7 @@ The model is considered 'good' if the points on one side have the same color pat
 [ANIM_GIF]: <NN-XOR cross 2 layers/NN-XOR cross 2 layers 10 sec 895 px.gif>
 
 ## 2.2. NN-XOR Solved by 2 Crossing Layers (2 x 1 Perceptron) <br> &emsp; &nbsp; (1st Layer in Self-Discovery mode)
-___
+
 &emsp;Added a checkbox to disable training for the first layer.<br> 
 &emsp;The results of the goals are still editable, but only for better visualization of the color of the points divided by the decision boundary (if you configure the correct operation, of course 😄).
 
