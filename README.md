@@ -63,7 +63,7 @@ _**NOTE:** Actually, it was more of an excuse to see how I get along with the Ch
 And the results:<br>(via Pyodide terminal emulator / Python 3.11.3 (main, Mar 31 2024 11:27:51) on WebAssembly/Emscripten 👍)
 ![Bridge simulation of 3 hands dealing ](Bridge/BridgeOnPyodide.png)
 
-## 2. NN-XOR Solved by 2 Crossing Layers (2 x 1 Perceptron)
+## 2.1. NN-XOR Solved by 2 Crossing Layers (2 x 1 Perceptron) <br> &emsp; &nbsp; (1st Layer trained first)
 ___
 &emsp;The same old story of the XOR problem😁, now solved by a 2-layer model with each layer having 1 perceptron.<br>
 &emsp;The first layer will learn the bitwise AND operation (or something else, at your discretion) and try to best separate its classes.<br>
@@ -99,6 +99,28 @@ The model is considered 'good' if the points on one side have the same color pat
 
 #### YouTube video: [https://youtu.be/St4yNx8MQJA](https://youtu.be/St4yNx8MQJA)
 
+### Afterthought:
+&emsp; And what if I don't train the first layer at all?! Will it be able to find an 'operation' by itself? 😁 
 
 [IMG_PNG]: <NN-XOR cross 2 layers/NN-XOR cross 2 layers.png>
 [ANIM_GIF]: <NN-XOR cross 2 layers/NN-XOR cross 2 layers 10 sec 895 px.gif>
+
+## 2.2. NN-XOR Solved by 2 Crossing Layers (2 x 1 Perceptron) <br> &emsp; &nbsp; (1st Layer in Self-Discovery mode)
+___
+&emsp;Added a checkbox to disable training for the first layer.<br> 
+&emsp;The results of the goals are still editable, but only for better visualization of the color of the points divided by the decision boundary (if you configure the correct operation, of course 😄).
+
+And some results:
+
+| [![0∘1=1][IMG_01]][IMG_01] | [![1∘1=1][IMG_11]][IMG_11] |
+|---------------------------------|---------------------------------|
+| [![0∘0=0][IMG_00]][IMG_00] | [![1∘0=1][IMG_10]][IMG_10] |
+
+Playing, I have a strong feeling that he succeeds from any starting position!
+Though I added some 0.5 bias to place the starting point in the "middle" (I thought to balance the chances of going to any of the 4 corners). 
+
+
+[IMG_01]: <NN-XOR cross 2 layers 1st self discovering/01.png>
+[IMG_11]: <NN-XOR cross 2 layers 1st self discovering/11.png>
+[IMG_00]: <NN-XOR cross 2 layers 1st self discovering/00.png>
+[IMG_10]: <NN-XOR cross 2 layers 1st self discovering/10.png>
