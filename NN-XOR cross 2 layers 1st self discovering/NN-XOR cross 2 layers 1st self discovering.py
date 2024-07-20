@@ -448,8 +448,14 @@ def layer1_slider_on_changed(val:int):
     # z1_fixed_output_data = np.array([1, 0, 0, 0]) # just to avoid the error in the next line
     if bTrainFirstLayer:
         print(f"Layer 1 current epoch = {val}")
-        layer1_loss_txt.set_text(f'Loss: {layer1_weights_history.loss[val]:.5f}')
-        layer1_accuracy_txt.set_text(f'Accuracy: {layer1_weights_history.accuracy[val]:.2f}')
+        l1_loss, l1_accuracy = "", ""
+        try:
+            l1_loss = f'Loss: {layer1_weights_history.loss[val]:.5f}'
+            l1_accuracy = f'Accuracy: {layer1_weights_history.accuracy[val]:.2f}'
+        except IndexError: # when we come back after disabling the training of the first layer
+            pass
+        layer1_loss_txt.set_text(l1_loss)
+        layer1_accuracy_txt.set_text(l1_accuracy)
     if layer1_signal.onTraining:
         if SHOW_PROGRESS_IN_REAL_TIME:
             layer1_loss_txt.draw(fig.canvas.get_renderer())
@@ -634,7 +640,7 @@ def layer2_slider_on_changed(val:int):
     print(f"Layer 2 current epoch = {val}")
     if not bTrainFirstLayer:
         if not layer2_signal.onTraining or (layer2_signal.onTraining and SHOW_PROGRESS_IN_REAL_TIME): # aka if not layer2_signal.onTraining Or REAL_TIME
-            # using escape characters, clear the previous line in the console... have to try it 😁
+            # using escape characters, clear the previous line in the console... have to do it 😁
             print("\033[F\033[K", end="")
             print(f"Layer 2 and Layer 1 current epoch = {val}")
             layer1_slider_on_changed(val) # update also the first layer model decision boundary when the second layer slider is changed

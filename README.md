@@ -119,6 +119,7 @@ And some results:
 Playing, I have a strong feeling that he succeeds from any starting position!
 Though I added some 0.5 bias to place the starting point in the "middle" (I thought to balance the chances of going to any of the 4 corners). 
 
+#### YouTube video: [https://youtu.be/-3slC32osPk](https://youtu.be/-3slC32osPk)
 
 [IMG_01]: <NN-XOR cross 2 layers 1st self discovering/01.png>
 [IMG_11]: <NN-XOR cross 2 layers 1st self discovering/11.png>
