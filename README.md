@@ -63,6 +63,9 @@ _**NOTE:** Actually, it was more of an excuse to see how I get along with the Ch
 And the results:<br>(via Pyodide terminal emulator / Python 3.11.3 (main, Mar 31 2024 11:27:51) on WebAssembly/Emscripten 👍)
 ![Bridge simulation of 3 hands dealing ](Bridge/BridgeOnPyodide.png)
 
+And just for fun 
+[a discussion with ChatGPT about this hand](Bridge/ChatGPT%20discussion%20about%20this%20bridge%20hand.pdf) 😄
+
 ## 2.1. NN-XOR Solved by 2 Crossing Layers (2 x 1 Perceptron) <br> &emsp; &nbsp; (1st Layer trained first)
 
 &emsp;The same old story of the XOR problem😁, now solved by a 2-layer model with each layer having 1 perceptron.<br>
@@ -125,3 +128,16 @@ Though I added some 0.5 bias to place the starting point in the "middle" (I thou
 [IMG_11]: <NN-XOR cross 2 layers 1st self discovering/11.png>
 [IMG_00]: <NN-XOR cross 2 layers 1st self discovering/00.png>
 [IMG_10]: <NN-XOR cross 2 layers 1st self discovering/10.png>
+
+### Afterthought:
+&emsp; And what if I give some help to my little friend? 😀 <br>
+&emsp; I have to ask ChatGPT: <br>
+![alt text](<NN-XOR - 1 perceptron 3 inputs (including a custom feature)/I wonder if.png>)
+
+## 2.3. NN-XOR Solved by 1 Perceptron ... <br> &emsp; &nbsp; (with 3 inputs = 2 + 1 custom feature) 
+
+&emsp;Let's face it, matplotlib's UI widgets aren't... "Wow" 😁. I used Tkinter instead (not quite Qt yet, but anyway 😉).
+
+![alt text](<NN-XOR - 1 perceptron 3 inputs (including a custom feature)/custom_feature_SlightlyBent.png>)
+
+...to be updated, I’m going to play bridge now 😉
