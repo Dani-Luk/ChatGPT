@@ -349,11 +349,11 @@ accuracy_label.grid(row=1, column=0, padx=5, pady=0, sticky="w")
 accuracy_value = tk.Label(stats_frame, text="0.75   ", bg="white", bd=1, relief="solid", width=10, anchor='w')
 accuracy_value.grid(row=1, column=1, padx=5, pady=0, sticky="w")
 
-# in the 2nd row of stats_frame add a checkbox "Show Progress in real-time" span col0 + col1
+# in the 2nd row of stats_frame add a checkbox "Show progress in real-time" span col0 + col1
 show_progress_var = tk.BooleanVar()
 show_progress_var.set(SHOW_PROGRESS_IN_REAL_TIME)
 show_progress_checkbox = tk.Checkbutton(stats_frame, 
-                                        text=f"Show Progress in real-time (min diff loss = {DIFF_LOSS_FOR_REAL_TIME:.3})", 
+                                        text=f"Show progress in real-time (min diff loss = {DIFF_LOSS_FOR_REAL_TIME:.3})", 
                                         variable=show_progress_var)
 show_progress_checkbox.grid(row=2, column=0, columnspan=2, padx=5, pady=(3, 0), sticky="w")
 
@@ -372,7 +372,7 @@ def slider_on_change(str_val):
     plot_model(int(str_val))
 
 # Create a horizontal slider in the bottom frame
-slider = tk.Scale(bottom_frame, from_=0, to=100, orient=tk.HORIZONTAL, command=slider_on_change)
+slider = tk.Scale(bottom_frame, from_=0, to=100, orient=tk.HORIZONTAL, command=slider_on_change, bigincrement=10)
 slider.pack(fill=tk.X, padx=10, pady=0)
 
 # Function to focus the slider on left/right click
@@ -518,18 +518,29 @@ def plot_model(val:int):
                          ['Decision boundary', 'z1=0 plane', 'Intersection line'], 
                          bbox_to_anchor=(0.8, 0.98), loc='upper left', facecolor='#f2f2f2'
                          )
-
-        # the x, y domains of the plot of the intersection line
-        xx = np.linspace(-0.5, 1.5, 100)
-        # Solve the equation of the decision boundary plane for z = 0
-        yy = -(a*xx + d) / b
-
-        yyclip = yy[(yy >= -0.5) & (yy <= 1.5)]
-        xxclip = xx[(yy >= -0.5) & (yy <= 1.5)]
         
-        # Plot the intersection line between the two planes (z=0 and the decision boundary)
-        zz = np.zeros_like(xxclip)
-        layer2_ax.plot(xxclip, yyclip, zz, color='forestgreen', alpha=0.8)
+        if a or b: # there is a line to plot
+            # Find the the x, y domains of the plot of the intersection line
+            # Solve the equation of the decision boundary plane for z = 0
+            if b != 0:
+                xx = np.linspace(-0.5, 1.5, 100)    
+                yy = -(a * xx + d) / b
+
+                yyclip = yy[(yy >= -0.5) & (yy <= 1.5)]
+                xxclip = xx[(yy >= -0.5) & (yy <= 1.5)]
+            else:
+                # Handle the case where b == 0 by solving for x in terms of y
+                yy = np.linspace(-0.5, 1.5, 100)
+                xx = -(b * yy + d) / a
+
+                yyclip = yy[(xx >= -0.5) & (xx <= 1.5)]
+                xxclip = xx[(xx >= -0.5) & (xx <= 1.5)]
+
+            # Now you can use xxclip and yyclip for plotting or further processing
+            
+            # Plot the intersection line between the two planes (z=0 and the decision boundary)
+            zz = np.zeros_like(xxclip)
+            layer2_ax.plot(xxclip, yyclip, zz, color='forestgreen', alpha=0.8)
 
         # Set the limits of the z-axis
         layer2_ax.set_xlim(-0.5, 1.5)

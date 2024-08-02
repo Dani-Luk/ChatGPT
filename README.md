@@ -131,13 +131,32 @@ Though I added some 0.5 bias to place the starting point in the "middle" (I thou
 
 ### Afterthought:
 &emsp; And what if I give some help to my little friend? 😀 <br>
-&emsp; I have to ask ChatGPT: <br>
+&emsp; Well, I have to ask the big G.: <br>
 ![alt text](<NN-XOR - 1 perceptron 3 inputs (including a custom feature)/I wonder if.png>)
 
 ## 2.3. NN-XOR Solved by 1 Perceptron ... <br> &emsp; &nbsp; (with 3 inputs = 2 + 1 custom feature) 
 
-&emsp;Let's face it, matplotlib's UI widgets aren't... "Wow" 😁. I used Tkinter instead (not quite Qt yet, but anyway 😉).
+&emsp;Let's face it, matplotlib's UI widgets aren't... "Wow" 😁. Here, I try Tkinter instead (not quite Qt yet, but anyway 😉).
 
 ![alt text](<NN-XOR - 1 perceptron 3 inputs (including a custom feature)/custom_feature_SlightlyBent.png>)
 
-...to be updated, I’m going to play bridge now 😉
+Legend:
+- **AND** is <span style="color:rgb(86, 156, 214);"><i>and</i></span> 😉
+- ... 
+- **SlightlyBent**: the 4 points almost form a plane, just to see if it can find a way to separate them
+- **RND**: 4 random points in the range [-1.00, 1.00) generated from the seed: __*Rng Seed*__ (click *__Rnd__* to shuffle)
+
+
+#### YouTube video: [https://youtu.be/45A84XZfhzY](https://youtu.be/45A84XZfhzY)
+
+That's it! 🥳
+
+Just a quick question: is there a difference in convergence between the "valid" operations? (excluding **XOR**, ofc 😜) </br>
+And one final thought: is this solution better than the others? 🤔 </br>
+<span style="font-size:12px; font-style:italic;">(I encourage you to reflect on it.)</span>
+
+That's all, folks! 
+I hope you enjoyed this little journey. 😉</br>
+Bye!</br>
+![Thank You Thats All Folks](<NN-XOR - 1 perceptron 3 inputs (including a custom feature)/Thats All Folks.gif>)
+
