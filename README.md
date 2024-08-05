@@ -147,7 +147,7 @@ Legend:
 - **RND**: 4 random points in the range [-1.00, 1.00) generated from the seed: __*Rng Seed*__ (click *__Rnd__* to shuffle)
 
 
-#### YouTube video: [https://youtu.be/45A84XZfhzY](https://youtu.be/45A84XZfhzY)
+#### YouTube video: [https://youtu.be/HI6J4g0EkKo](https://youtu.be/HI6J4g0EkKo)
 
 That's it! 🥳
 
