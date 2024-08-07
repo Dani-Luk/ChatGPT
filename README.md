@@ -68,7 +68,7 @@ And just for fun
 
 ## 2.1. NN-XOR Solved by 2 Crossing Layers (2 x 1 Perceptron) <br> &emsp; &nbsp; (1st Layer trained first)
 
-&emsp;The same old story of the XOR problem ([A kind of 'study' of the XOR problem in neural networks 😄](https://github.com/Dani-Luk/NN-XOR)), now solved by a 2-layer model with each layer having 1 perceptron.<br>
+&emsp;The same old story of the XOR problem ([A kind of 'study' of the XOR problem in neural networks 😄](https://github.com/Dani-Luk/NN-XOR?tab=readme-ov-file#an-nn-xor-study)), now solved by a 2-layer model with each layer having 1 perceptron.<br>
 &emsp;The first layer will learn the bitwise AND operation (or something else, at your discretion) and try to best separate its classes.<br>
 &emsp;The second layer, by incorporating the output of the first (frozen) layer as a third input dimension(z-elevation), will attempt to achieve the XOR results.
 
