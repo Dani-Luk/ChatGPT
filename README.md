@@ -68,14 +68,14 @@ And just for fun
 
 ## 2.1. NN-XOR Solved by 2 Crossing Layers (2 x 1 Perceptron) <br> &emsp; &nbsp; (1st Layer trained first)
 
-&emsp;The same old story of the XOR problem😁, now solved by a 2-layer model with each layer having 1 perceptron.<br>
+&emsp;The same old story of the XOR problem ([A kind of 'study' of the XOR problem in neural networks 😄](https://github.com/Dani-Luk/NN-XOR)), now solved by a 2-layer model with each layer having 1 perceptron.<br>
 &emsp;The first layer will learn the bitwise AND operation (or something else, at your discretion) and try to best separate its classes.<br>
 &emsp;The second layer, by incorporating the output of the first (frozen) layer as a third input dimension(z-elevation), will attempt to achieve the XOR results.
 
 &emsp;You can start training the second layer at any point in the learning process of the first layer simply by moving the cursor of the first slider and clicking the "Train layer 2" button.<br>
 
 The second plot shows:
-- the 4 input data points(00, 01, 10, 11) corroborated with z-elevation given by the first model's result
+- the 4 input data points (00, 01, 10, 11) corroborated with z-elevation given by the first model's result
 - ${\color{#f7fc00}■}$ the decision boundary plane
 - ${\color{#96e8e8}■}$ the z=0 plane 
 - ${\color{#81bf3d}■}$ the line of intersection of this two planes 
@@ -151,7 +151,7 @@ Legend:
 
 That's it! 🥳
 
-Just a quick question: is there a difference in convergence between the "valid" operations? (excluding **XOR**, ofc 😜) </br>
+Just a quick question: is there a difference in convergence achievement between the "valid" operations? (excluding **XOR**, ofc 😜) </br>
 And one final thought: is this solution better than the others? 🤔 </br>
 <span style="font-size:12px; font-style:italic;">(I encourage you to reflect on it.)</span>
 
